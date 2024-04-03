@@ -1,7 +1,10 @@
 from flask import Flask
-from app.routes.SemanticServer import papers_bp  # Make sure this matches the actual file name
-
+from flask_cors import CORS
+from app.routes.SemanticServer import semantic_bp
+from app.routes.CrossRefServer import crossRef_bp
 def create_app():
     app = Flask(__name__)
-    app.register_blueprint(papers_bp, url_prefix='/api')
+    CORS(app)
+    app.register_blueprint(semantic_bp, url_prefix='/api')
+    app.register_blueprint(crossRef_bp, url_prefix='/api')
     return app
