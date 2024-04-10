@@ -8,3 +8,4 @@ def create_app():
     app.register_blueprint(semantic_bp, url_prefix='/api')
     app.register_blueprint(crossRef_bp, url_prefix='/api')
     return app
+    

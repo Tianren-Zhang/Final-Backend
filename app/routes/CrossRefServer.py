@@ -12,6 +12,7 @@ def fetch_recommendation_paper_based_on_doi(doi):
     if response.ok:
         return jsonify(response.json())
     else:
+        print(response.json());
         return jsonify({"error": "Failed to fetch data"}), 500
 
 @crossRef_bp.route('/crossref/paper_by_title/<path:title>', methods=['GET'])
@@ -23,4 +24,5 @@ def fetch_paper_authors_based_on_doi(title):
     if response.ok:
         return jsonify(response.json())
     else:
+        print(response.json());
         return jsonify({"error": "Failed to fetch data"}), 500
